@@ -48,10 +48,12 @@ if __name__=="__main__":
     print('show plt')
 
     # 构建tf-idf词典
+    # 默认匹配长度大于1的单词，对于中文需要特殊处理，
     tfidf_model = TfidfVectorizer(stop_words='english').fit(x_train)  # 构造tfidf向量
     print("词典大小 {}".format(len(tfidf_model.vocabulary_)))
 
-    # 构造TF-IDF向量
+    # 构造tf-idf向量
+    # 得到tf-idf矩阵，稀疏矩阵表示法
     x_train_vec = tfidf_model.transform(x_train)
     x_val_vec = tfidf_model.transform(x_val)
     # print(type(x_train_vec), x_train_vec)
