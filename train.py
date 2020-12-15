@@ -48,7 +48,7 @@ if __name__=="__main__":
     print('show plt')
 
     # 构建tf-idf词典
-    # 默认匹配长度大于1的单词，对于中文需要特殊处理，
+    # 默认匹配长度大于1的单词，对于中文需要特殊处理，TfidfVectorizer(token_pattern=r"(?u)\b\w+\b").fit(document)
     tfidf_model = TfidfVectorizer(stop_words='english').fit(x_train)  # 构造tfidf向量
     print("词典大小 {}".format(len(tfidf_model.vocabulary_)))
 
