@@ -49,7 +49,7 @@ if __name__=="__main__":
 
     # 构建tf-idf词典
     # 默认匹配长度大于1的单词，对于中文需要特殊处理， max_features限制词表大小
-    # TfidfVectorizer(token_pattern=r"(?u)\b\w+\b", max_features=10, ngram_range=(1,2)).fit(document)
+    # TfidfVectorizer(token_pattern=r"(?u)\b\w+\b", max_features=1000, ngram_range=(1,2)).fit(document)
     tfidf_model = TfidfVectorizer(stop_words='english').fit(x_train)  # 构造tfidf向量
     print("词典大小 {}".format(len(tfidf_model.vocabulary_)))
 
