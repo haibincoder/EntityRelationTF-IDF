@@ -56,6 +56,18 @@ if __name__=="__main__":
     # 得到tf-idf矩阵，稀疏矩阵表示法
     x_train_vec = tfidf_model.transform(x_train)
     x_val_vec = tfidf_model.transform(x_val)
+
+    x_temp = x_train_vec[:1]
+    print(x_temp)
+    # 高维稀疏矩阵
+    #  (0, 8880)	0.6182306565570105  第0个字符，对应词典序号为8880的词的TFIDF为0.618230...
+    #  (0, 8250)	0.3761725985922683
+    #  (0, 4698)	0.4674077584472665
+    #  (0, 1982)	0.507754880532654
+    print(x_temp.todense())
+    # 转换为一般矩阵
+    # [[0. 0. 0. ... 0. 0. 0.]]
+
     # print(type(x_train_vec), x_train_vec)
 
     # 定义模型
